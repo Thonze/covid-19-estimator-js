@@ -19,13 +19,20 @@ const covid19ImpactEstimator = (data) => {
              currentlyInfected = reportedCases * 10,
              infectionsByRequestedTime = currentlyInfected * Math.pow(2,factor),
              severeCasesByRequestedTime = 15/100 * infectionsByRequestedTime,
-             hospitalBedsByRequestedTime = 35/100 * totalHospitalBeds
+             hospitalBedsByRequestedTime = 35/100 * totalHospitalBeds,
+             casesForICUByRequestedTime = 5/100 * infectionsByRequestedTime,
+             casesForVentilatorsByRequestedTime = 2/100 * infectionsByRequestedTime,
+             dollarsInFlight = infectionsByRequestedTime * 0.65 * 1.5 * 30             
+            
         },
         severeImpact:{
             currentlyInfected= reportedCases * 50,
             infectionsByRequestedTime = currentlyInfected * Math.pow(2,factor),
             severeCasesByRequestedTime = 15/100 * infectionsByRequestedTime,
-            hospitalBedsByRequestedTime = 35/100 * totalHospitalBeds
+            hospitalBedsByRequestedTime = 35/100 * totalHospitalBeds,
+            casesForICUByRequestedTime = 5/100 * infectionsByRequestedTime,
+            casesForVentilatorsByRequestedTime = 2/100 * infectionsByRequestedTime,
+            dollarsInFlight = infectionsByRequestedTime * 0.65 * 1.5 * 30
         }
     }
 };
