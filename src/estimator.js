@@ -8,7 +8,7 @@ const covid19ImpactEstimator = (data) => {
                  avgDailyIncomeInUSD: 5,
                  avgDailyIncomePopulation: 0.71
              },
-             factor="number",
+             factor="numbers",
              periodType:"days",
              timeToElapse: 58,
              reportedCases: 674,
