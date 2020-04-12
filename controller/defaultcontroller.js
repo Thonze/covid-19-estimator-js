@@ -1,7 +1,7 @@
 const covid19ImpactEstimator = require('../src/estimator').data
 const {impact} = require('../src/estimator')
 
-// const{region,factor} = require('../src/estimator')
+//Post request
 
 exports.dataPost = (req,res, next) => {
 
@@ -14,6 +14,9 @@ exports.dataPost = (req,res, next) => {
     const reportedCases = req.body.reportedCases
     const population = req.body.population
     const totalHospitalBeds = req.body.totalHospitalBeds
+
+    console.log(name,avgAge,avgDailyIncomeInUSD)
+
     res.status(201).json({
         message: "data created succesfully",
         data: {id: new Date().toISOString(), name:name, avgAge:avgAge,avgDailyIncomeInUSD,avgDailyIncomeInUSD,factor,periodType,timeToElapse,reportedCases,population,totalHospitalBeds} //returning posts
@@ -22,6 +25,8 @@ exports.dataPost = (req,res, next) => {
 
     
 }
+
+//Get request
 
 exports.getdata = (req,res,next) => {
     
@@ -34,7 +39,9 @@ exports.getdata = (req,res,next) => {
     const dollarsInFlight = req.body.dollarsInFlight
 
     res.status(200).json({
-        impact: JSON.stringify([{ currentlyInfected,infectionsByRequestedTime,severeCasesByRequestedTime,hospitalBedsByRequestedTime,casesForICUByRequestedTime,casesForVentilatorsByRequestedTime,dollarsInFlight }])
+        impact: JSON.stringify([{ currentlyInfected,infectionsByRequestedTime,severeCasesByRequestedTime,hospitalBedsByRequestedTime,casesForICUByRequestedTime,casesForVentilatorsByRequestedTime,dollarsInFlight }]),
+
+        severeImpact: JSON.stringify([{ currentlyInfected,infectionsByRequestedTime,severeCasesByRequestedTime,hospitalBedsByRequestedTime,casesForICUByRequestedTime,casesForVentilatorsByRequestedTime,dollarsInFlight }])
         
     })
     
