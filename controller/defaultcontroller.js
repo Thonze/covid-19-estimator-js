@@ -51,4 +51,6 @@ const process = (request, response) => {
     setTimeout(() => {
       response.end();
     }, 100);
+
+    console.log(process)
 }
