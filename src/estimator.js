@@ -35,7 +35,7 @@ const covid19ImpactEstimator = (data) => {
             casesForICUByRequestedTime: 5/100 * infectionsByRequestedTime,
             casesForVentilatorsByRequestedTime: 2/100 * infectionsByRequestedTime,
             dollarsInFlight: infectionsByRequestedTime * 0.65 * 1.5 * 30
-        }
+        },
     }
 };
 
